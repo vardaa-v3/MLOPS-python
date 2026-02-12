@@ -10,7 +10,6 @@ class chatbook:
                            1. press 1 to signup
                            2. prees 2 to login
                            3. press 3 to write a post
-                           4. press 4 to message a friend
                            5. press any other key to exit from console""" )
         
         if user_input == "1":
@@ -18,9 +17,7 @@ class chatbook:
         elif user_input == "2":
             self.login()
         elif user_input == "3":
-            pass
-        elif user_input == "4":
-            pass
+            self.post()
         else:
             exit()
 
@@ -45,6 +42,16 @@ class chatbook:
                 self.loggedin = True
             else :
                 print("please regser you email first")
+
+        print("\n")
+        self.menu()
+
+    def post(self):
+        if self.loggedin == True:
+            txt = input("enter the message to be posted")
+            print(f" the post have been posted in the chat booy as fallows {txt}")
+        else:
+            print("please sign in first ")
 
         print("\n")
         self.menu()
